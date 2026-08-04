@@ -49,7 +49,7 @@ export default function Footer() {
         {/* Header Typography */}
         <div className="mb-12 text-center md:text-left">
           <h2 className="text-section-lg font-heading font-extrabold tracking-tight leading-tight">
-            <span className="text-white block">Let&apos;s create</span>
+            <span className="text-white block">Let&apos;s build</span>
             <span className="text-gray-500 block">
               something great together.
             </span>
@@ -64,10 +64,10 @@ export default function Footer() {
               Email
             </p>
             <a
-              href="mailto:yoga.setyawan@example.com"
+              href="mailto:setiawanyoga212@gmail.com"
               className="text-xl md:text-2xl font-bold hover:text-gray-300 transition-colors inline-block font-heading"
             >
-              yoga.setyawan@example.com
+              setiawanyoga212@gmail.com
             </a>
           </div>
 
