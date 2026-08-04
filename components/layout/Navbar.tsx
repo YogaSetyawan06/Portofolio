@@ -110,14 +110,16 @@ export default function Navbar() {
 
     const el = document.querySelector(href);
     if (el) {
-      const navHeight = navRef.current?.offsetHeight || 64;
-      const elementPosition = el.getBoundingClientRect().top + window.scrollY;
-      const offsetPosition = elementPosition - navHeight + 36;
-      
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: "smooth"
-      });
+      setTimeout(() => {
+        const navHeight = 64; 
+        const elementPosition = el.getBoundingClientRect().top + window.scrollY;
+        const offsetPosition = elementPosition - navHeight + 36;
+        
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: "smooth"
+        });
+      }, 150); 
     }
   };
 
