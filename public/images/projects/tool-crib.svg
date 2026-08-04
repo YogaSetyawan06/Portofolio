@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="450" viewBox="0 0 800 450">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1A1C1C"/>
+      <stop offset="100%" style="stop-color:#454747"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="450" fill="url(#bg)"/>
+  <g transform="translate(400,200)" opacity="0.15">
+    <rect x="-120" y="-80" width="240" height="160" rx="12" fill="none" stroke="#fff" stroke-width="2"/>
+    <line x1="-80" y1="-40" x2="80" y2="-40" stroke="#fff" stroke-width="1.5"/>
+    <line x1="-80" y1="0" x2="40" y2="0" stroke="#fff" stroke-width="1.5"/>
+    <line x1="-80" y1="40" x2="60" y2="40" stroke="#fff" stroke-width="1.5"/>
+    <circle cx="90" cy="-40" r="6" fill="#fff"/>
+    <circle cx="90" cy="0" r="6" fill="none" stroke="#fff" stroke-width="1.5"/>
+    <circle cx="90" cy="40" r="6" fill="#fff"/>
+  </g>
+  <text x="400" y="330" text-anchor="middle" font-family="Inter,system-ui,sans-serif" font-size="14" fill="rgba(255,255,255,0.3)" letter-spacing="3">TOOL CRIB MANAGEMENT</text>
+</svg>
