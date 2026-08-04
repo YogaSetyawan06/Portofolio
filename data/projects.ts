@@ -141,7 +141,7 @@ export const projects: Project[] = [
     slug: "fintrack",
     title: "FinTrack",
     summary: "Personal Finance Tracker & Management Apps",
-    thumbnail: "/images/projects/fintrack/thumbnail.png",
+    thumbnail: "/images/projects/fintrack/Thumbnail.png",
     overview:
       "Fintrack is a sophisticated personal finance management platform developed using Flutter, designed to help users track, manage, and analyze their financial activities in real-time. This project represents a modern solution to personal budgeting challenges by leveraging secure cloud infrastructure and comprehensive data visualization.",
     problem:
