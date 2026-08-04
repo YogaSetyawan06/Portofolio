@@ -1,12 +1,9 @@
 # PRD — Portfolio Website Yoga Setyawan
-**Dokumen brief teknis untuk dieksekusi oleh AI CODING AGENT**
-Versi 1.0 · 21 Juli 2026
-
 ---
 
 ## 1. Ringkasan Proyek
 
-Membangun website portofolio personal one-page (dengan satu halaman detail dinamis untuk studi kasus proyek) bergaya minimalis monochrome/grayscale, terinspirasi dari struktur `launchfolio.framer.website` (lihat `referensi-desain-hero.png`). Website ini menjadi pusat personal branding untuk menampilkan pengalaman kerja, proyek, skill teknis, dan aktivitas profesional.
+Membangun website portofolio personal one-page (dengan satu halaman detail dinamis untuk studi kasus proyek) bergaya minimalis monochrome/grayscale. Website ini menjadi pusat personal branding untuk menampilkan pengalaman kerja, proyek, skill teknis, dan aktivitas profesional.
 
 ## 2. Tujuan & Sasaran
 
@@ -71,7 +68,7 @@ portfolio/
 ## 5. Design System
 
 ### 5.1 Palet Grayscale
-Diambil langsung dari referensi `referensi-palet-grayscale.png` (nilai hasil sampling, gunakan sebagai acuan token — boleh disesuaikan tipis saat implementasi):
+Diambil langsung dari referensi `referensi-palet-grayscale.png`:
 
 | Token | Hex | Penggunaan |
 |---|---|---|
@@ -123,11 +120,6 @@ Single-page scroll di `/` dengan anchor section: `#about #experience #projects #
 
 **Animasi:** Framer Motion `layout` prop untuk transisi ukuran, `transition={{ type: "spring", stiffness: 300, damping: 30 }}`.
 
-**Acceptance criteria:**
-- [ ] Transisi expand/shrink halus tanpa layout jump/flicker.
-- [ ] Buffering dots hanya muncul saat state shrink.
-- [ ] Bisa dioperasikan via keyboard/hover untuk aksesibilitas dasar.
-
 ### 7.2 Hero / Beranda
 Grid 2 kolom (kiri: teks, kanan: foto). Kiri berisi:
 1. Badge pill kecil "Available for August '25" + dot hijau (statis atau pulsing).
@@ -147,34 +139,8 @@ Layout 2 kolom borderless (grid/flex, tanpa garis pembatas):
 - Setiap baris pengalaman diberi vertical padding/margin konsisten.
 - Urutan: descending berdasarkan tanggal mulai (terbaru di atas).
 
-Model data:
-```ts
-interface Experience {
-  company: string;
-  companyFullName: string;
-  role: string;
-  startDate: string; // untuk sorting
-  endDate: string | "Present";
-  description: string[];
-}
-```
-
 ### 7.5 Projects
 Grid kartu proyek. Klik kartu → halaman detail (`/projects/[slug]`) menampilkan: **Problem, Solution, Peran, Hasil**.
-
-Model data:
-```ts
-interface Project {
-  slug: string;
-  title: string;
-  thumbnail: string;
-  problem: string;
-  solution: string;
-  role: string;
-  result: string;
-  gallery?: string[];
-}
-```
 
 ### 7.6 Skills
 Split layout 2 kolom:
@@ -226,9 +192,7 @@ Mobile-first. Breakpoint acuan Tailwind: `sm 640px`, `md 768px`, `lg 1024px`, `x
 | Activities gallery | grid 3–4 kolom → 2 kolom di mobile |
 | Contact drawer | lebar drawer menyesuaikan hingga hampir full-width di mobile |
 
-## 9. Referensi Komponen (21st.dev)
-
-Gunakan sebagai *inspirasi pola*, sesuaikan warna/animasi ke design system di atas:
+## 9. Referensi Komponen
 
 | Section | Kata kunci pencarian di 21st.dev |
 |---|---|
@@ -239,7 +203,7 @@ Gunakan sebagai *inspirasi pola*, sesuaikan warna/animasi ke design system di at
 | Skills | "bento skill grid", "icon card grid" |
 | Projects | "project grid card", "case study card" |
 
-## 10. Rencana Eksekusi Bertahap (untuk Agent)
+## 10. Rencana Eksekusi Bertahap
 
 1. **Setup**: scaffold Next.js + TS + Tailwind, tanam design token (warna, radius, shadow) di `globals.css`, siapkan struktur folder.
 2. **Navbar + Hero**: bangun state machine scroll + animasi Framer Motion, uji di browser.
@@ -249,13 +213,3 @@ Gunakan sebagai *inspirasi pola*, sesuaikan warna/animasi ke design system di at
 6. **Contact**: drawer, validasi form, integrasi EmailJS.
 7. **QA responsif & animasi**: uji di breakpoint mobile/tablet/desktop, cek transisi halus.
 8. **Deploy**: siapkan build untuk Vercel.
-
-> Setiap akhir fase, minta agent **"test di browser dan ambil screenshot hasilnya"** sebelum lanjut ke fase berikutnya — ini memanfaatkan fitur browser-in-the-loop Antigravity untuk verifikasi visual otomatis.
-
-## 11. Definition of Done
-
-- [ ] Semua section berfungsi sesuai spesifikasi di atas dan cocok dengan design system grayscale.
-- [ ] Navbar dynamic-island bekerja mulus di scroll up/down + hover.
-- [ ] Form kontak tervalidasi dan berhasil mengirim email nyata.
-- [ ] Tampilan responsif dari mobile sampai desktop, tanpa elemen terpotong.
-- [ ] Tidak ada console error, build production berhasil (`next build`).
