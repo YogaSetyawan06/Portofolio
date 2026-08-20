@@ -1,23 +1,23 @@
 export interface SocialLink {
   name: string;
   url: string;
-  icon: string; // We will map this to Lucide icons in the component
+  icon: string; 
 }
 
 export const SOCIAL_LINKS: SocialLink[] = [
   {
     name: "LinkedIn",
-    url: "#", // TODO: Add actual link
+    url: "https://www.linkedin.com/in/yogasetyawann/", 
     icon: "linkedin",
   },
   {
     name: "GitHub",
-    url: "#", // TODO: Add actual link
+    url: "https://github.com/YogaSetyawan06", 
     icon: "github",
   },
   {
     name: "Instagram",
-    url: "#", // TODO: Add actual link
+    url: "https://www.instagram.com/yogasetyawan06/", 
     icon: "instagram",
   },
 ];
