@@ -45,7 +45,7 @@ export default function Hero({ slotRef, isDesktop }: HeroProps) {
               >
                 <AnimatedDot />
                 <span className="text-sm font-medium text-black font-body">
-                  Available for August &apos;25
+                  Available for August &apos;26
                 </span>
               </div>
             </motion.div>
