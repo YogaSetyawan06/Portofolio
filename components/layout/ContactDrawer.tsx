@@ -18,6 +18,7 @@ import emailjs from "@emailjs/browser";
 import { toast } from "sonner";
 import Image from "next/image";
 import Link from "next/link";
+import { SOCIAL_LINKS } from "@/data/socials";
 
 const contactSchema = z.object({
   name: z.string().min(2, "Required"),
@@ -280,36 +281,29 @@ export default function ContactDrawer({ isOpen, onClose }: ContactDrawerProps) {
                     My Social Media
                   </p>
                   <div className="flex items-center gap-4">
-                    <a
-                      href="#"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="p-2.5 bg-gray-50 text-gray-600 rounded-full hover:bg-black hover:text-white transition-colors"
-                    >
-                      <Github size={18} />
-                    </a>
-                    <a
-                      href="#"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="p-2.5 bg-gray-50 text-gray-600 rounded-full hover:bg-[#0077b5] hover:text-white transition-colors"
-                    >
-                      <Linkedin size={18} />
-                    </a>
-                    <a
-                      href="#"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="p-2.5 bg-gray-50 text-gray-600 rounded-full hover:bg-[#E1306C] hover:text-white transition-colors"
-                    >
-                      <Instagram size={18} />
-                    </a>
-                    <a
-                      href="#"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="p-2.5 bg-gray-50 text-gray-600 rounded-full hover:bg-black hover:text-white transition-colors"
-                    ></a>
+                   {SOCIAL_LINKS.map((social) => {
+                      const getIcon = () => {
+                        switch (social.icon.toLowerCase()) {
+                          case "linkedin": return <Linkedin size={18} />;
+                          case "github": return <Github size={18} />;
+                          case "instagram": return <Instagram size={18} />;
+                          case "twitter": return <Twitter size={18} />;
+                          default: return null;
+                        }
+                      };
+                      return (
+                        <a
+                          key={social.name}
+                          href={social.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="p-2.5 bg-gray-50 text-gray-600 rounded-full hover:bg-black hover:text-white transition-colors flex items-center justify-center"
+                          aria-label={social.name}
+                        >
+                          {getIcon()}
+                        </a>
+                      );
+                    })}
                   </div>
                 </div>
 
